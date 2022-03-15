@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  映射文件DTD约束头  -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace命名空间与下面的id一起组成查询标识  -->
+<mapper namespace="com.zq.secondarymarket.mapper.UserMapper">
+    <resultMap type="com.zq.secondarymarket.entity.User" id="User">
+        <!--
+            type 属性：指定实体类的路径
+            id 属性：接口名
+         -->
+        <id column="userId" property="userId"/>
+<!--        <result column="userName" property="userName"/>-->
+<!--        <result column="password" property="password"/>-->
+<!--        <result column="phone" property="phone"/>-->
+<!--        <result column="email" property="email"/>-->
+<!--        <result column="college" property="college"/>-->
+<!--        <result column="major" property="major"/>-->
+<!--        <result column="className" property="className"/>-->
+        <!--
+                    id 标签：用于指定主键字段
+                    result 标签：用于指定非主键字段
+                    column 属性：用于指定数据库列名
+                    property 属性：用于指定实体类属性名称
+        -->
+    </resultMap>
+
+    <select id="getAllUserList" parameterType="com.zq.secondarymarket.entity.User" resultType="com.zq.secondarymarket.entity.User">
+        select *
+        from user
+    </select>
+
+</mapper>

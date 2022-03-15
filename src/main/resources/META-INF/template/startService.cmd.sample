@@ -1,0 +1,13 @@
+set JOINT_BASE_PATH=%cd%
+
+cd ../
+
+set SPTL_FILE_UPLOAD=%cd%
+
+cd %JOINT_BASE_PATH%
+
+java -Dlogging.file=%JOINT_BASE_PATH%/logs/sptl-report-service.log ^
+     -Dlogging.config=%JOINT_BASE_PATH%/config/logback.xml ^
+     -Dconfig.path=%JOINT_BASE_PATH%/config/ ^
+     -Dfile.upload.path=%SPTL_FILE_UPLOAD%/upload/ ^
+     -jar %JOINT_BASE_PATH%/lib/handbass*.jar
