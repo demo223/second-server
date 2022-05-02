@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  映射文件DTD约束头  -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace命名空间与下面的id一起组成查询标识  -->
+<mapper namespace="com.zq.secondarymarket.mapper.ProductMapper">
+    <resultMap id="product" type="com.zq.secondarymarket.entity.Product">
+        <result property="productId" column="productId"/>
+        <result property="productName" column="productName"/>
+        <result property="categoryId" column="categoryId"/>
+        <result property="productTitle" column="productTitle"/>
+        <result property="productIntro" column="productIntro"/>
+        <result property="productPicture" column="productPicture"/>
+        <result property="productPrice" column="productPrice"/>
+        <result property="productSellingPrice" column="productSellingPrice"/>
+        <result property="productNum" column="productNum"/>
+        <result property="productSales" column="productSales"/>
+    </resultMap>
+
+    <!-- 插入商品数据 -->
+    <insert id="addProduct" parameterType="com.zq.secondarymarket.entity.Product">
+        insert into product(product_name, category_id, product_title, product_intro, product_picture, product_price,
+                            product_selling_price, product_num, product_sales,concat_user_id)
+        values (#{productName}, #{categoryId}, #{productTitle}, #{productIntro}, #{productPicture}, #{productPrice},
+                #{productSellingPrice}, #{productNum}, #{productSales},#{concatUserId})
+
+    </insert>
+
+</mapper>
