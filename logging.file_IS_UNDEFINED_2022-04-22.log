@@ -1,0 +1,23 @@
+08:57:14.020 [main] INFO  c.z.s.SecondaryMarketApplication - Starting SecondaryMarketApplication on 华硕 with PID 968 (D:\桌面\secondarymarket\target\classes started by ASUS in D:\桌面\secondarymarket) 
+08:57:14.028 [main] INFO  c.z.s.SecondaryMarketApplication - No active profile set, falling back to default profiles: default 
+08:57:15.588 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode! 
+08:57:15.591 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode. 
+08:57:15.677 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 Redis repository interfaces. 
+08:57:15.828 [main] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.zq.prd.sptl.mapper]' package. Please check your configuration. 
+08:57:16.712 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http) 
+08:57:16.755 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+08:57:16.756 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.38] 
+08:57:16.761 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0]. 
+08:57:16.765 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+08:57:16.766 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+08:57:16.798 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020] 
+08:57:17.189 [main] INFO  o.a.c.c.C.[.[.[/secondarymarket] - Initializing Spring embedded WebApplicationContext 
+08:57:17.190 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3083 ms 
+08:57:18.555 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor' 
+08:57:19.883 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler' 
+08:57:19.952 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path '/secondarymarket' 
+08:57:19.965 [main] INFO  c.z.s.SecondaryMarketApplication - Started SecondaryMarketApplication in 6.587 seconds (JVM running for 10.794) 
+08:58:11.127 [http-nio-8888-exec-1] INFO  o.a.c.c.C.[.[.[/secondarymarket] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+08:58:11.127 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+08:58:11.141 [http-nio-8888-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms 
+08:58:11.737 [http-nio-8888-exec-1] INFO  c.a.druid.pool.DruidDataSource - {dataSource-1} inited 
