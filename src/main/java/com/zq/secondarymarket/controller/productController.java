@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
@@ -128,7 +130,7 @@ productController {
     // 删除商品图片
     @RequestMapping("/deleteProductPicture")
     public Response deleteProductPicture(@RequestParam("file") MultipartFile file,
-                                         @RequestParam("concatUserId") String concatUserId) {
+            @RequestParam("concatUserId") String concatUserId) {
         Response response = new Response();
         // 图片文件
         // 获取图片文件名称
@@ -145,6 +147,33 @@ productController {
         dir.delete();// 删除path下面的newFileName文件
         response.setResultMessage("删除商品图片成功!");
         response.setResultCode("200");
+        return response;
+    }
+    
+    // 获取商品中category_id为x的商品的数量
+    @RequestMapping("/getCount")
+    public Response getCount(@RequestParam(value = "categoryId",required = false) int categoryId) {
+        Response response = new Response();
+        int count1 = iProductService.getCount(1);
+        int count2 = iProductService.getCount(2);
+        int count3 = iProductService.getCount(3);
+        int count4 = iProductService.getCount(4);
+        int count5 = iProductService.getCount(5);
+        int count6 = iProductService.getCount(6);
+        int count7 = iProductService.getCount(7);
+        int count8 = iProductService.getCount(8);
+        response.setResultCode("200");
+        response.setResultMessage("获取商品数量成功!");
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(count1);
+        list.add(count2);
+        list.add(count3);
+        list.add(count4);
+        list.add(count5);
+        list.add(count6);
+        list.add(count7);
+        list.add(count8);
+        response.setBeans(list);
         return response;
     }
 }

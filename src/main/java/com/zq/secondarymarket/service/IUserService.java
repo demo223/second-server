@@ -34,5 +34,5 @@ public interface IUserService {
     // 分页获取用户数据
     List<User> getUserListByPage(Map<String, Object> map);
     // 获取用户总数
-    int getUserCount(String grade, String searchValue);
+    int getUserCount(String grade, String searchValue, String userType);
 }

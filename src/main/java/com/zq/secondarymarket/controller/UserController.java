@@ -87,7 +87,10 @@ public class UserController {
                                @RequestParam("qq") String qq,
                                @RequestParam("sex") String sex,
                                @RequestParam("receiveAddress") String receiveAddress,
-                               @RequestParam("nowAddress") String nowAddress) {
+                               @RequestParam("nowAddress") String nowAddress,
+                               @RequestParam("goodType") String goodType,
+                               @RequestParam("userType") String userType,
+                               @RequestParam("description") String description) {
         Response response = new Response();
         User user = new User();
         user.setUserId(userId);
@@ -99,6 +102,9 @@ public class UserController {
         user.setSex(sex);
         user.setReceiveAddress(receiveAddress);
         user.setNowAddress(nowAddress);
+        user.setGoodType(goodType);
+        user.setUserType(userType);
+        user.setDescription(description);
         int result = iUserService.updateUser(user);
         if (result == 1) {
             response.setResultMessage("更新用户信息成功!");
@@ -129,13 +135,17 @@ public class UserController {
     @RequestMapping("/getUserList")
     public Response getUserList(@RequestParam("pageNum") Integer pageNum,
     @RequestParam("pageSize") Integer pageSize,
-    @RequestParam(value = "grade" ,required = false) String grade,
-            @RequestParam(value = "searchValue", required = false) String searchValue) {
+            @RequestParam(value = "grade", required = false) String grade,
+            @RequestParam(value = "userType", required = false) String userType,
+    @RequestParam(value = "searchValue", required = false) String searchValue) {
         Map<String, Object> map = new HashMap<>();
         map.put("pageNum", (pageNum - 1) * pageSize);
         map.put("pageSize", pageSize);
         if (grade != null && !grade.equals("")) {
             map.put("grade", grade);
+        }
+        if (userType != null && !userType.equals("")) {
+            map.put("userType", userType);
         }
         if (searchValue != null && !searchValue.equals("")) {
             map.put("searchValue", searchValue);
@@ -144,7 +154,7 @@ public class UserController {
         Pagination pagination = new Pagination();
         pagination.setCurrent(pageNum);
         pagination.setPageSize(pageSize);
-        pagination.setTotal((long) iUserService.getUserCount(grade, searchValue));
+        pagination.setTotal((long) iUserService.getUserCount(grade, searchValue, userType));
         pagination.setList(list);
         Response response = new Response();
         response.setResultMessage("返回用户数据成功!");

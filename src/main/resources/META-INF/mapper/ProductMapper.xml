@@ -29,4 +29,8 @@
 
     </insert>
 
+    <!-- 获取商品中category_id为n的商品的数量 -->
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from product where category_id = #{categoryId}
+    </select>
 </mapper>

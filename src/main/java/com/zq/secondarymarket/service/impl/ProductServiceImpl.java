@@ -22,4 +22,10 @@ public class ProductServiceImpl implements IProductService {
   public int addProductPicture(String productPicture) {
     return productMapper.addProductPicture(productPicture);
   }
+
+  // 获取商品中category_id为x的商品的数量
+  @Override
+  public int getCount(int categoryId) {
+    return productMapper.getCount(categoryId);
+  }
 }

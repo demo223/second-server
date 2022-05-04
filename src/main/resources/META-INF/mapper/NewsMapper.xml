@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  映射文件DTD约束头  -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace命名空间与下面的id一起组成查询标识  -->
+<mapper namespace="com.zq.secondarymarket.mapper.NewsMapper">
+    <resultMap id="news" type="com.zq.secondarymarket.entity.News">
+        <result property="id" column="id"/>
+        <result property="htmlStr" column="htmlStr"/>
+        <result property="updateUserId" column="updateUserId"/>
+    </resultMap>
+
+    <!-- 插入html数据 -->
+    <insert id="addNews" parameterType="com.zq.secondarymarket.entity.News">
+        insert into news(html_str, update_user_id)
+        values (#{htmlStr}, #{updateUserId})
+    </insert>
+
+</mapper>

@@ -60,5 +60,5 @@ public interface UserMapper {
      */
     List<User> getUserListByPage (Map<String, Object> map);
     // 获取分页数据总数
-    int getUserCount(@Param("grade") String grade, @Param("searchValue") String searchValue);
+    int getUserCount(@Param("grade") String grade, @Param("searchValue") String searchValue, @Param("userType") String userType);
 }

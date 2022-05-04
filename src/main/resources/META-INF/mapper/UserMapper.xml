@@ -57,7 +57,10 @@
             sex            = #{sex},
             qq             = #{qq},
             receiveAddress = #{receiveAddress},
-            nowAddress     = #{nowAddress}
+            nowAddress     = #{nowAddress},
+            goodType       = #{goodType},
+            userType       = #{userType},
+            description    = #{description}
         where userId = #{userId}
     </update>
 
@@ -73,9 +76,12 @@
             resultType="com.zq.secondarymarket.entity.User">
         select *
         from users
-        where  1 = 1
+        where 1 = 1
         <if test="grade != null and grade != ''">
             and grade = #{grade}
+        </if>
+        <if test="userType != null and userType != ''">
+            and userType = #{userType}
         </if>
         <if test="searchValue != null and searchValue != ''">
             and (userId like concat('%',#{searchValue},'%')
@@ -92,6 +98,9 @@
         where 1 = 1
         <if test="grade != null and grade != ''">
             and grade = #{grade}
+        </if>
+        <if test="userType != null and userType != ''">
+            and userType = #{userType}
         </if>
         <if test="searchValue != null and searchValue != ''">
             and (userId like concat('%',#{searchValue},'%')

@@ -60,8 +60,8 @@ public class UserServiceImpl implements IUserService {
     }
     // 获取用户数量
     @Override
-    public int getUserCount(String grade, String searchValue) {
-        return userMapper.getUserCount(grade, searchValue);
+    public int getUserCount(String grade, String searchValue , String userType) {
+        return userMapper.getUserCount(grade, searchValue, userType);
     }
 
 }
